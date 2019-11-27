@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AIRPORT DELAYS IN THE UNITED STATES</title>
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- Navigation Section -->
+  <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">AIRPORT DELAYS</a>
+      <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Plots
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="max_temperature.html">2015 Data</a>
+              <a class="dropdown-item" href="humidity.html">2016 Data</a>
+              <a class="dropdown-item" href="cloudiness.html">2017 Data</a>
+              <a class="dropdown-item" href="wind_speed.html">2018 Data</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comparisons.html">Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-12">
+        <!-- Left box  -->
+        <div class="bar">
+          <h3 class="title">U.S. Airport Delays in Each State</h3>
+          <hr>
+          <p>This interactive map of the USA accumlates delays in each state. We used API's 
+             After assembling the dataset, we used Matplotlib to plot various aspects of the US Airports vs. latitude.
+             Factors in this data set include geographical locations of airports and the number of delays per airport. 
+             You will be able to interact with the data set by indicating which year. We used plotly to display this data</p>
+          <div id="bar"></div>
+          <select id="selDataset" onchange="getData(this.value)">
+              <option value="emoji_char">Emoji Char</option>
+              <option value="emoji_id">Emoji ID</option>
+              <option value="emoji_name">Emoji Name</option>
+          </select>
+  
+          <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        </div>
+        <p> Click on drop down menu to change the years </p>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <!-- Right Box -->
+        <div class="box">
+          <h5 class="title">Which Airport has the most delays?</h5>
+          <hr>
+
+
+          <div class="container">
+            <div class="row" style="padding-bottom: 30px;">
+              <div class="col-14">
+                <a href="max_temperature.html">
+                  <img class="panel" src="/static/images/Flight-delay-The-worst-airline-for-flight-delays-has-been-revealed-1103313.jpg" alt="Airport Delay Image">
+                </a>
+              </div>
+              <div class="col-14">
+                </a>
+              </div>
+            </div>
+
+            <div class="row" style="padding-bottom: 30px;">
+              <div class="col-14">
+                  <p>This interactive map of the USA accumlates delays in each state. We used API's 
+                      After assembling the dataset, we used Matplotlib to plot various aspects of the US Airports vs. latitude.
+                      Factors in this data set include geographical locations of airports </p>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="wind_speed.html">
+                  <img class="panel" src="Resources/assets/images/Fig4.png" alt="Wind Speed Graph">
+                </a>
+              </div>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Abel, Kwang and Jorge | Project #3</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
