@@ -1,4 +1,4 @@
-# Team coachella
+# Data Analytics and Visualization Project #3
 
 Jorgee Sanchez (Table)
 
