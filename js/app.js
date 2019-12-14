@@ -1,5 +1,5 @@
 // Plot the default route once the page loads
-var defaultURL = "/first_year";
+var defaultURL = "/FLIGHT_DATE";
 d3.json(defaultURL).then(function(data) {
   var data = [data];
   var layout = { margin: { t: 30, b: 100 } };
